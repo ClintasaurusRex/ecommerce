@@ -1,19 +1,22 @@
-<div class="card">
-  <div class="header">
-    <h1>Products</h1>
-    <%= link_to 'New Product', new_product_path, class: "button" %>
-  </div>
+<div class="products-container">
+  <header class="page-header">
+    <h1>Our Products</h1>
+    <%= link_to 'Add New Product', new_product_path, class: "button" %>
+  </header>
 
-  <div class="grid">
+  <div class="products-grid">
     <% @products.each do |product| %>
-      <div class="card">
-        <h3><%= product.name %></h3>
-        <p><%= product.description %></p>
-        <p class="price"><%= number_to_currency(product.price) %></p>
-        <div class="actions">
-          <%= link_to 'View', product, class: "button" %>
+      <div class="product-card">
+        <div class="product-details">
+          <h2 class="product-name"><%= product.name %></h2>
+          <span class="product-category"><%= product.category.name %></span>
+          <p class="product-description"><%= truncate(product.description, length: 100) %></p>
+          <p class="product-price"><%= number_to_currency(product.price) %></p>
+        </div>
+        <div class="product-actions">
+          <%= link_to 'View Details', product, class: "button" %>
           <%= link_to 'Edit', edit_product_path(product), class: "button" %>
-          <%= button_to 'Delete', product, method: :delete, class: "button button-danger", data: { confirm: 'Are you sure?' } %>
+          <%= button_to 'Delete', product, method: :delete, class: "button button-danger", data: { turbo_confirm: 'Are you sure?' } %>
         </div>
       </div>
     <% end %>

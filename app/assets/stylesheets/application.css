@@ -171,3 +171,99 @@ footer {
     margin: 0.5rem 0;
   }
 }
+
+/* Add these styles to your existing CSS */
+
+.products-container {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.product-name {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.product-category {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  color: #666;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 1.4em;
+  color: #2c5282;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.product-actions {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.product-actions .button {
+  flex: 1;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
